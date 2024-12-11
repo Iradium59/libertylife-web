@@ -52,7 +52,6 @@ export const authOptions = {
                 id: token.sub,
             };
 
-            console.log(session);
             return session;
         }
     },
