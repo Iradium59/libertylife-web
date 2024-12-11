@@ -1,3 +1,5 @@
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 export type NavItem = {
     label: string;
     link?: string;
@@ -17,3 +19,17 @@ export type Guild = {
     icon: string;
     permissions: string;
 };
+
+
+export interface Item {
+    icon: IconDefinition;
+    label: string;
+    href?: string;
+    child?: SubItem[];
+}
+
+export interface SubItem {
+    href: string;
+    icon: IconDefinition;
+    label: string;
+}

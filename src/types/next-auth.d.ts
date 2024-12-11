@@ -1,6 +1,4 @@
-// import NextAuth from 'next-auth';
-
-
+import "next-auth";
 declare module 'next-auth' {
     interface Session {
         user: User;
@@ -14,7 +12,6 @@ declare module 'next-auth' {
         name: string;
         email: string;
         image: string;
-        isInGuild: boolean;
     }
 }
 
