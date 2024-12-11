@@ -1,79 +1,33 @@
 "use client";
-import React, { useState } from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import { faTachometerAlt, faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import MenuItem from "@/ui/dashboard/MenuItem";
+import AccountButton from "./AccountButton";
 import Image from "next/image";
 
-type Section = {
-	title: string;
-	items: string[];
-};
-
-const sections: Section[] = [
-	{
-		title: "Informations",
-		items: ["Identité", "Garages"],
-	},
-	{
-		title: "Dévelopemment",
-		items: ["Signalez un bug", "Faire une suggestions", "suivi"],
-	},
-	{
-		title: "Settings",
-		items: ["Profile", "Notifications", "Security"],
-	},
-];
-
-export default function Sidenav() {
-	const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>(
-		{}
-	);
-
-	const toggleSection = (sectionTitle: string) => {
-		setOpenSections((prev) => ({
-			...prev,
-			[sectionTitle]: !prev[sectionTitle],
-		}));
-	};
+export default function Sidebar() {
+	const menuItems = [
+		{
+			icon: faTachometerAlt,
+			label: "Dashboard",
+			child: [
+				{ href: "#page1", icon: faNewspaper, label: "Page 1" },
+				{ href: "#page2", icon: faNewspaper, label: "Page 2" },
+			],
+		},
+		{ icon: faNewspaper, label: "Feed", href: "#feed", active: false },
+	];
 
 	return (
-		<aside className="bg-gray-900 text-white w-72 min-h-screen p-6 shadow-lg">
-			{/* Header */}
-			<Image src={"/logo.png"} alt="Logo" width={250} height={200} />
-
-			{/* Navigation */}
-			<nav className="mt-10">
-				{sections.map((section) => (
-					<div key={section.title} className="">
-						<button
-							onClick={() => toggleSection(section.title)}
-							className="flex items-center justify-between w-full p-3 text-left rounded-lg hover:bg-gray-700 transition"
-						>
-							<span className="text-lg font-medium">{section.title}</span>
-							{openSections[section.title] ? (
-								<ChevronUpIcon className="w-5 h-5" />
-							) : (
-								<ChevronDownIcon className="w-5 h-5" />
-							)}
-						</button>
-						<ul
-							className={`mt-2 space-y-2 pl-4 transition-all ${openSections[section.title] ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-								}`}
-						>
-							{section.items.map((item) => (
-								<li key={item}>
-									<a
-										href={`#${item.toLowerCase()}`}
-										className="block p-2 rounded-lg text-gray-300 hover:bg-teal-500 hover:text-white transition"
-									>
-										{item}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
+		<div className="flex h-screen w-[250px] flex-col bg-backgroundLight dark:bg-backgroundDark pt-10">
+			<ul className="flex w-full flex-col gap-3 px-3">
+				<div className="flex justify-center items-center mb-10">
+					<Image src="/logo.png" width={150} height={150} alt="logo" />
+				</div>
+				{menuItems.map((item, index) => (
+					<MenuItem key={index} item={item} />
 				))}
-			</nav>
-		</aside>
+			</ul>
+			<AccountButton />
+		</div>
 	);
-};
-
+}

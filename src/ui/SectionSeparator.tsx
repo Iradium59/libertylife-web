@@ -14,8 +14,8 @@ export default function SectionSeparator({image} : {image: string}) {
                 <Image
                     src={image} // Assurez-vous que l'image est dans le dossier public
                     alt="Background"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="z-10"
                 />
             </div>
