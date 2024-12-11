@@ -1,7 +1,5 @@
 import NextAuth from "next-auth";
 import Discord from "next-auth/providers/discord";
-import { checkIsInDiscord } from "@/app/api/discord/guild";
-import { getUserInfo } from "@/app/api/discord/user";
 
 const scopes = ['identify', 'email', 'guilds', 'guilds.members.read', 'guilds.join'];
 
