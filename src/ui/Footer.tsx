@@ -1,5 +1,5 @@
 import SectionSeparator from './SectionSeparator';
-import Wave from './Wave'; // Si tu utilises le même composant pour les vagues
+//import Wave from './Wave'; // Si tu utilises le même composant pour les vagues
 
 export default function Footer() {
     return (

@@ -1,4 +1,4 @@
-import SideNav from "@/ui/dashboard/Sidenav"
+// import SideNav from "@/ui/dashboard/Sidenav"
 import SessionWrapper from "@/ui/dashboard/SessionWrapper"
 import Maintenance from "@/ui/Maintenance"
 

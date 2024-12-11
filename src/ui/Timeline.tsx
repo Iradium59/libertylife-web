@@ -3,7 +3,7 @@ import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineC
 import Image from 'next/image';
 import SectionTitle from './SectionTitle';
 
-let steps = [
+const steps = [
     { title: 'LastNight', description: 'LastNight était notre premier projet GTA RP', image: '/lastnight.png' },
     { title: 'Changement de direction', description: 'Nous avons décidé de changer de direction pour partir dans un lore et une DA encore jamais vue', image: '/logo.png' },
     { title: 'Naissance de LibertyLife', description: 'LibertyLife est né de cette envie de créer un serveur unique, ce démarquant des autres par son identité et sa DA unique', image: '/logo.png' },
