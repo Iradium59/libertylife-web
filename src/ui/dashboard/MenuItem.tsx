@@ -3,8 +3,9 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { Item, SubItem } from "@/lib/definition";
 
-export default function MenuItem({ item }) {
+export default function MenuItem({ item }: { item: Item }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -20,7 +21,7 @@ export default function MenuItem({ item }) {
 					</button>
 					{isOpen && (
 						<ul className="ml-6 mt-2 space-y-2">
-							{item.child.map((subItem, index) => (
+							{item.child.map((subItem: SubItem, index: number) => (
 								<li key={index}>
 									<Link href={subItem.href}>
 										<div className="flex items-center gap-2 rounded-md px-3 py-2 text-textLight dark:text-textDark hover:bg-backgroundLight dark:hover:bg-backgroundDark">
