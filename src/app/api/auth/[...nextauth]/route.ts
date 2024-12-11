@@ -3,7 +3,7 @@ import Discord from "next-auth/providers/discord";
 
 const scopes = ['identify', 'email', 'guilds', 'guilds.members.read', 'guilds.join'];
 
-export const authOptions = {
+const handler = {
     providers: [
         Discord({
             clientId: process.env.DISCORD_CLIENT_ID as string,
@@ -57,7 +57,5 @@ export const authOptions = {
     },
     secret: process.env.NEXTAUTH_SECRET,
 };
-
-const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
