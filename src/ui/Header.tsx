@@ -47,7 +47,7 @@ export default function Header() {
                     <span className="inline-block">t</span>
                     <span className="inline-block">&nbsp;</span>
                     <span className="inline-block">l</span>
-                    <span className="inline-block">'</span>
+                    <span className="inline-block">&apos;</span>
                     <span className="inline-block">o</span>
                     <span className="inline-block">m</span>
                     <span className="inline-block">b</span>

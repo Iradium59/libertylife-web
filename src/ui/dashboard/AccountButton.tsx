@@ -15,7 +15,7 @@ export default function AccountButton() {
     const [darkMode, setDarkMode] = useState(true);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
-    const router = useRouter();
+    // const router = useRouter();
 
     useEffect(() => {
         if (status !== "loading") {
