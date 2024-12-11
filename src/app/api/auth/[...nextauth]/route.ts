@@ -1,45 +1,19 @@
-import NextAuth from "next-auth";
+import NextAuth from "next-auth/next";
 import Discord from "next-auth/providers/discord";
 
 const scopes = ['identify', 'email', 'guilds', 'guilds.members.read', 'guilds.join'];
 
-const handler = {
+
+const handler = NextAuth({
     providers: [
         Discord({
             clientId: process.env.DISCORD_CLIENT_ID as string,
             clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
-            authorization: { params: { scope: scopes.join(' ') } },
+            authorization: {params: {scope: scopes.join(' ')}},
         })
     ],
     callbacks: {
-        async jwt({ token, account }: any) {
-            if (account) {
-                token.accessToken = account.access_token;
-                token.refreshToken = account.refresh_token;
-                token.expiresAt = Date.now() + account.expires_in * 1000; 
-            }
-    
-            if (token.expiresAt && Date.now() > token.expiresAt) {
-                try {
-                    const response = await fetch('https://discord.com/api/v10/oauth2/token', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams({
-                            'client_id': process.env.DISCORD_CLIENT_ID as string,
-                            'client_secret': process.env.DISCORD_CLIENT_SECRET as string,
-                            'refresh_token': token.refreshToken,
-                            'grant_type': 'refresh_token',
-                        }),
-                    });
-    
-                    const refreshedTokens = await response.json();
-                    token.accessToken = refreshedTokens.access_token;
-                    token.refreshToken = refreshedTokens.refresh_token;
-                    token.expiresAt = Date.now() + refreshedTokens.expires_in * 1000;
-                } catch (error) {
-                    console.error('Erreur lors du rafraîchissement du token', error);
-                }
-            }
+        async jwt({ token }: any) {
             return token;
         },
 
@@ -56,6 +30,7 @@ const handler = {
         }
     },
     secret: process.env.NEXTAUTH_SECRET,
-};
+})
+
 
 export { handler as GET, handler as POST };
