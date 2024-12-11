@@ -9,6 +9,7 @@ export default function LoginPage() {
 	const router = useRouter();
 
 	useEffect(() => {
+		console.log(status);
 		if (status === 'unauthenticated') {
 			signIn('discord', { callbackUrl: '/dashboard' });
 		} else if (status === 'authenticated') {
