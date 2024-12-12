@@ -1,15 +1,23 @@
 [
     {
         "name": "Iradium",
-        "role": "developpeur"
+        "role": "developpeur",
+        "grade": "Responsable développement"
     },
     {
         "name": "Max",
-        "role": "developpeur"
+        "role": "developpeur",
+        "grade": "Développeur"
     },
     {
         "name": "Leclerc",
-        "role": "developpeur"
+        "role": "developpeur",
+        "grade": "Développeur"
+    },
+    {
+        "name": "Furydrass",
+        "role": "Admin",
+        "grade": "Gérant légal"
     }
 
 ]
