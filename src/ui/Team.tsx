@@ -100,7 +100,7 @@ export default function Team() {
                                         {member.name}
                                     </h2>
                                     <p className="italic text-gray-600 text-medium">
-                                        {member.role}
+                                        {member.grade}
                                     </p>
                                 </div>
                             ))}
