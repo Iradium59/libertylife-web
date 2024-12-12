@@ -15,7 +15,7 @@ export const navItems: NavItem[] = [
 			},
 			{
 				label: "Les Touches",
-				link: "#"
+				link: "https://wiki.libertylife.ovh/tutos/touches"
 			},
 		]
 	},
@@ -25,19 +25,19 @@ export const navItems: NavItem[] = [
 		children: [
 			{
 				label: "Légal",
-				link: "#"
+				link: "https://wiki.libertylife.ovh/reglement/legal"
 			},
 			{
 				label: "Illégal",
-				link: "#"
+				link: "https://wiki.libertylife.ovh/reglement/illegal"
 			},
 			{
 				label: "SASP",
-				link: "#"
+				link: "https://wiki.libertylife.ovh/reglement/sasp"
 			},
 			{
 				label: "SAMS",
-				link: "#"
+				link: "https://wiki.libertylife.ovh/reglement/sams"
 			},
 		]
 	},
