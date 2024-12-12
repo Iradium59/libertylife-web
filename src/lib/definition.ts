@@ -10,6 +10,7 @@ export type NavItem = {
 export interface TeamMember {
     name: string;
     role: string;
+    grade: string;
 }
 
 
