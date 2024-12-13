@@ -15,9 +15,19 @@
         "grade": "Développeur"
     },
     {
+        "name": "Snow",
+        "role": "Admin",
+        "grade": "Responsable Staff"
+    },
+    {
         "name": "Furydrass",
         "role": "Admin",
         "grade": "Gérant légal"
+    },
+    {
+        "name": "Drago",
+        "role": "Admin",
+        "grade": "Gérant illégal"
     }
 
 ]
