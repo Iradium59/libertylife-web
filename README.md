@@ -81,6 +81,6 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 
 ## Contact
 
-Votre Nom - [@votre_twitter](https://twitter.com/votre_twitter) - email@example.com
+Iradium - [@Iradium59](https://github.com/Iradium59) - email@example.com
 
-Lien du projet: [https://github.com/votre-username/libertylife-web](https://github.com/votre-username/libertylife-web)
+Lien du projet: [https://github.com/Iradium59/libertylife-web](https://github.com/Iradium59/libertylife-web)
