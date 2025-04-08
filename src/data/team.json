@@ -1,5 +1,10 @@
 [
     {
+        "name": "Light",
+        "role": "fondateur",
+        "grade": "Fondateur"
+    },
+    {
         "name": "Iradium",
         "role": "developpeur",
         "grade": "Responsable développement"
@@ -26,6 +31,11 @@
     },
     {
         "name": "Drago",
+        "role": "Admin",
+        "grade": "Gérant illégal"
+    },
+    {
+        "name": "Lamar",
         "role": "Admin",
         "grade": "Gérant illégal"
     }
